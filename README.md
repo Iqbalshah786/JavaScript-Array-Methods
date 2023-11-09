@@ -26,3 +26,60 @@ const filteredItems = items.filter((item) => {
 });
 console.log(items); // Interestingly, the filter method does not change the original array.
 console.log(filteredItems);
+```
+## Map Method
+```javascript
+// The map method transforms each element and creates a new array with the same length.
+const itemNames = items.map((item) => {
+  return item.name;
+});
+console.log(itemNames); // [ 'Bike', 'TV', 'Album', 'Book', 'Phone', 'Computer', 'Keyboard' ]
+```
+## Find Method
+```javascript
+// The `find` method returns the first element in an array that satisfies a given condition.
+// In this case, it searches for an object in the `items` array where the `name` property is equal
+// to "Book" and returns that object. If no element satisfies the condition, `find` returns `undefined`.
+const foundItem = items.find((item) => {
+  return item.name === "Book";
+});
+console.log(foundItem); // { name: 'Book', price: 5 }
+```
+## ForEach Method
+```javascript
+// The forEach method is used to iterate over an array and execute a function for each element.
+// In this case, we are logging the name property of each item in the array to the console.
+items.forEach((item) => {
+  console.log(item.name);
+});
+```
+## Some Method
+```javascript
+// The some method returns a boolean value if any of the items in the array satisfy the condition.
+const hasInexpensiveItems = items.some((item) => {
+  return item.price < 100;
+});
+console.log(hasInexpensiveItems); // true
+```
+## Every Method
+```javascirpt
+// The every method returns a boolean value if all of the items in the array satisfy the condition.
+const expensiveItems = items.every((item) => {
+  return item.price > 100;
+});
+console.log(expensiveItems); // false
+```
+## Reduce Method
+```javascirpt
+// The reduce method is used to calculate the total price of all items in the 'items' array.
+const total = items.reduce((currentTotal, item) => {
+  return item.price + currentTotal;
+}, 0);
+console.log(total); // 1840
+```
+## Includes Method
+```javascirpt
+// The includes method returns a boolean value if the array contains the specified value.
+const includeValue = numbers.includes(2);
+console.log(includeValue); // true
+```
